@@ -36,6 +36,8 @@ const registerUser = asyncHandler(async (req, res) => {
   // Generate Token
   const token = generateToken(user._id);
 
+  // Register User
+
   // Send HTTP-only cookie
   res.cookie("token", token, {
     path: "/",
@@ -62,6 +64,12 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 });
 
+// Login User
+const loginUser = asyncHandler(async (req, res) => {
+  res.send("Login User");
+});
+
 module.exports = {
   registerUser,
+  loginUser,
 };
