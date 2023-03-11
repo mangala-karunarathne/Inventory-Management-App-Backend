@@ -114,7 +114,7 @@ if (user && passwordIsCorrect) {
   res.status(400);
   throw new Error("Invalid email or Password");
 }
-
+   
 });
 
 // Logout User
@@ -130,8 +130,15 @@ const logout = asyncHandler(async (req, res) => {
 
 });
 
+// Get User Data
+
+const getUser = asyncHandler(async (req, res) => {
+  res.send("Get User Data")
+});
+
 module.exports = {
   registerUser,
   loginUser,
   logout,
+  getUser,
 };
